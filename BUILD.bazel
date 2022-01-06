@@ -90,10 +90,11 @@ cc_library(
     ],
 )
 
+# TODO(srmainwaring):
 cc_binary(
     name = "libignition-plugin1.so",
     includes = ["include"],
-    linkopts = ["-Wl,-soname,libignition-plugin1.so"],
+    linkopts = ["-Wl"],
     linkshared = True,
     deps = [":ign_plugin"],
 )
