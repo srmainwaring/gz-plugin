@@ -443,6 +443,8 @@ namespace gz
       // RTLD_NODELETE is not defined in dlfcn-32.
       (void) _noDelete;
       int dlopenMode = RTLD_LAZY | RTLD_LOCAL;
+#elif defined __APPLE__
+      int dlopenMode = RTLD_LAZY | RTLD_GLOBAL | (_noDelete ? RTLD_NODELETE : 0);
 #else
       int dlopenMode = RTLD_LAZY | RTLD_LOCAL | (_noDelete ? RTLD_NODELETE : 0);
 #endif
