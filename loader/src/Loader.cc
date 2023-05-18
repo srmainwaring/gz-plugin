@@ -134,6 +134,7 @@ namespace gz
     Loader::~Loader()
     {
       // Do nothing.
+      std::cerr << "Destroying Loader\n";
     }
 
     /////////////////////////////////////////////////
